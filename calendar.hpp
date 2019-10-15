@@ -14,21 +14,20 @@
 
 using namespace std;
 
-class calendar
-{
+class calendar{
 private:
     int bdate;
     int edate;
-
+    
     int btime;
     int etime;
-
+    
     string eventname;
-
-
+    
+    
     string calendarname;
-
-
+    
+    
 public:
     void init(string calendername);
     void addevent(string bdate, string edate, string btime, string etime, string eventname);
@@ -36,38 +35,33 @@ public:
     void end();
 };
 
-void calendar::init(string ncalendarname)
-{
+void calendar::init(string ncalendarname){
     calendarname= ncalendarname;
     ofstream textDatei(calendarname);
-    if(textDatei)
-    {
+    if(textDatei){
         textDatei << "BEGIN:VCALENDAR\n" << "VERSION:2.0\n" << "X-WR-CALNAME:"<<calendarname <<"\n" << "X-WR-TIMEZONE:Europe/Berlin\n" << "METHOD:PUBLISH\n";
     }
-
+    
 }
 
-void calendar::end()
-{
+void calendar::end(){
     ofstream textDatei(calendarname, ios::app);
-    if(textDatei)
-    {
+    if(textDatei){
         textDatei <<"END:VCALENDAR";
         textDatei.close();
     }
 }
 //1TODO: LOCATION: DESCRIPTION:URL;VALUE=URI:http://
-void calendar::addevent(string bdate,string edate, string btime, string etime, string eventname)
-{
+void calendar::addevent(string bdate,string edate, string btime, string etime, string eventname){
     ofstream textDatei(calendarname, ios::app);
     textDatei << "BEGIN:VEVENT\n"
-              << "UID:" << bdate << "\n"
-              << "SUMMARY:"<< eventname << "\n"
-              << "CLASS:PUBLIC\n"
-              << "DTSTART:" << bdate << "T" << btime << "Z\n"
-              << "DTEND:" << edate << "T" << etime << "Z\n"
-              << "DTSTAMP:" << bdate << "T" << btime << "Z\n"
-              << "END:VEVENT\n";
+    << "UID:" << bdate << "\n"
+    << "SUMMARY:"<< eventname << "\n"
+    << "CLASS:PUBLIC\n"
+    << "DTSTART:" << bdate << "T" << btime << "Z\n"
+    << "DTEND:" << edate << "T" << etime << "Z\n"
+    << "DTSTAMP:" << bdate << "T" << btime << "Z\n"
+    << "END:VEVENT\n";
 }
 
 

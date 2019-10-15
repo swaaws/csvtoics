@@ -28,35 +28,35 @@ int main(int argc, const char * argv[]) {
          cout << "[end]   01|Jan|Januar.15" << endl;
         exit(1);
     }
-
+    
     //import csv data
 csv newcsv;
     newcsv.init(argv[1]);
     newcsv.getinfo();
-
-
-
+    
+    
+    
     //my workplan
 workplan myplan;
     myplan.getdata(newcsv.ary, argv[1]);
     myplan.getinfo();
-
-
+   
+    
         string name1= argv[2];
         string name2= " ";
         string name3= argv[3];
         string name=name1+name2+name3;
     myplan.username = name;
-
+    
     myplan.btime=argv[4];
     myplan.etime=argv[5];
     myplan.setuserid();
     myplan.timescope();
-
-
+    
+    
     // std::time_t result = std::time(nullptr);
     // std::cout << std::asctime(std::localtime(&result))<< endl;
-
+    
     //new calendar
 calendar cal;
     cal.init("Arbeit.ics");
