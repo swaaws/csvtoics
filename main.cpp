@@ -2,8 +2,8 @@
 //  main.cpp
 //  CSVtoICS
 //
-//  Created by Sebastian Heitzer on 06.01.16.
-//  Copyright © 2016 Sebastian Heitzer. All rights reserved.
+//  Created by swaaws on 06.01.16.
+//  Copyright © 2016 swaaws. All rights reserved.
 //
 #include <fstream>
 #include <iostream>
