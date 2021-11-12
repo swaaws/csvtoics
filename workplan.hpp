@@ -2,8 +2,8 @@
 //  workplan.hpp
 //  CSVtoICS
 //
-//  Created by Sebastian Heitzer on 12.01.16.
-//  Copyright © 2016 Sebastian Heitzer. All rights reserved.
+//  Created by swaaws on 12.01.16.
+//  Copyright © 2016 swaaws. All rights reserved.
 //
 
 #ifndef workplan_hpp
